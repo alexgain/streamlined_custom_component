@@ -1,0 +1,1 @@
+from .component import create_component

@@ -1,0 +1,20 @@
+from setuptools import setup, find_packages
+
+setup(
+    name="streamlit_custom_component",
+    version="0.1",
+    packages=find_packages(),
+    include_package_data=True,
+    install_requires=[
+        "streamlit",
+    ],
+    description="A package to create custom Streamlit components easily.",
+    author="Your Name",
+    author_email="your.email@example.com",
+    url="https://github.com/yourusername/streamlit_custom_component",
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
+)
