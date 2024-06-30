@@ -9,9 +9,9 @@ setup(
         "streamlit",
     ],
     description="A package to create custom Streamlit components easily.",
-    author="Your Name",
-    author_email="your.email@example.com",
-    url="https://github.com/yourusername/streamlit_custom_component",
+    author="Alex Gain",
+    author_email="alexzgain@gmail.com",
+    url="https://github.com/alexgain/streamlined_custom_component",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
