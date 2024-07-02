@@ -12,49 +12,57 @@ default_html_template = """
     {html}
 
     <script>
-      function sendMessageToStreamlitClient(type, data) {
-        var outData = Object.assign({
+      function sendMessageToStreamlitClient(type, data) {{
+        var outData = Object.assign({{
           isStreamlitMessage: true,
           type: type,
-        }, data);
+        }}, data);
         window.parent.postMessage(outData, "*");
-      }
+      }}
 
-      function init() {
-        sendMessageToStreamlitClient("streamlit:componentReady", {apiVersion: 1});
-      }
+      function init() {{
+        sendMessageToStreamlitClient("streamlit:componentReady", {{apiVersion: 1}});
+      }}
 
-      function setFrameHeight(height) {
-        sendMessageToStreamlitClient("streamlit:setFrameHeight", {height: height});
-      }
+      function setFrameHeight(height) {{
+        sendMessageToStreamlitClient("streamlit:setFrameHeight", {{height: height}});
+      }}
 
-      function sendDataToPython(data) {
+      function sendDataToPython(data) {{
         sendMessageToStreamlitClient("streamlit:setComponentValue", data);
-      }
+      }}
 
-      function onDataFromPython(event) {
+      var myInput = document.getElementById("{input_id}");
+
+      function onDataFromPython(event) {{
         if (event.data.type !== "streamlit:render") return;
-        var myInput = document.getElementById("{input_id}");
         myInput.value = event.data.args.input_value;
-      }
+      }}
+
+      myInput.addEventListener("change", function() {{
+        sendDataToPython({{
+          value: myInput.value,
+          dataType: "json",
+        }});
+      }})
 
       window.addEventListener("message", onDataFromPython);
       init();
 
-      window.addEventListener("load", function() {
-        var myInput = document.getElementById("{input_id}");
-
-        myInput.addEventListener("change", function() {
-          sendDataToPython({
+      window.addEventListener("load", function() {{
+        
+        myInput.addEventListener("change", function() {{
+          sendDataToPython({{
             value: myInput.value,
             dataType: "json",
-          });
-        });
+          }});
+        }})
 
-        window.setTimeout(function() {
-          setFrameHeight(document.documentElement.clientHeight);
-        }, 0);
-      });
+
+        window.setTimeout(function() {{
+          setFrameHeight(document.documentElement.clientHeight)
+        }}, 0);
+      }});
 
       setFrameHeight(0);
 
