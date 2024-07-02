@@ -21,11 +21,11 @@ default_html_template = """
       }
 
       function init() {
-        sendMessageToStreamlitClient("streamlit:componentReady", {apiVersion: 1});
+        sendMessageToStreamlitClient("streamlit:componentReady", {{"apiVersion": 1}});
       }
 
       function setFrameHeight(height) {
-        sendMessageToStreamlitClient("streamlit:setFrameHeight", {height: height});
+        sendMessageToStreamlitClient("streamlit:setFrameHeight", {{"height": height}});
       }
 
       function sendDataToPython(data) {
