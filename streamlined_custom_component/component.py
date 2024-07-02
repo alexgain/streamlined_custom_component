@@ -56,7 +56,7 @@ default_html_template = """
             value: myInput.value,
             dataType: "json",
           }});
-        }})
+        }});
 
 
         window.setTimeout(function() {{
