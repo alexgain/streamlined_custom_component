@@ -83,7 +83,6 @@ def create_component(modifications=None, full_html=None, component_name="custom_
 
         html_content = default_html_template.format(
             input_id=input_id,
-            input_value=input_value,
             html=extra_html,
             javascript=extra_javascript,
             css=extra_css
