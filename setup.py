@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="streamlit_custom_component",
+    name="streamlined_custom_component",
     version="0.2",
     packages=find_packages(),
     include_package_data=True,

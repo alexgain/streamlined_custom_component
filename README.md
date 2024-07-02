@@ -17,7 +17,7 @@ There are two main usecases:
 ### Simple usage:
 ```
 import streamlit as st
-from streamlit_custom_component import create_component
+from streamlined_custom_component import create_component
 
 modifications = {
     "input_id": "custom_input_id",
